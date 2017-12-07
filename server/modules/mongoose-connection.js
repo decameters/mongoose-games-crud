@@ -11,7 +11,7 @@ function connect(){
     
     mongoose.connection.on('error', function(error){
         console.log('mongoose connection error', error);
-    });    
+    });
 }
 
 module.exports = {

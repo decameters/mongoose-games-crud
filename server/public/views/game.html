@@ -1,0 +1,29 @@
+<h1>GAMES!</h1>
+
+<h3>add a new game</h3>
+<input type="text" placeholder="name of game" ng-model="vm.newGame.name">
+<input type="text" placeholder="duration" ng-model="vm.newGame.duration">
+<input type="text" placeholder="number of players" ng-model="vm.newGame.numberOfPlayers">
+<input type="text" placeholder="published date" ng-model="vm.newGame.publishedDate">
+<button ng-click="vm.addNewGame(vm.newGame)">add new game</button>
+<br>
+<br>
+<table>
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>duration</th>
+                <th>number of players</th>
+                <th>published date</th>
+                <th>vote</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="game in vm.game.list">
+                <td>{{game.name}}</td>
+                <td>{{game.duration}}</td>
+                <td>{{game.numberOfPlayers}}</td>
+                <td>{{game.publishedDate | date:"MM/dd/yyyy"}}</td>
+                <td><button ng-click="game.votes = game.votes + 1">vote</button>Votes: {{game.votes}}</td>
+        </tbody>
+    </table>
